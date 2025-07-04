@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { Item, GildedRose } from '../app/gilded-rose';
 
-describe('Gilded Rose', function () {
+describe('Unit Tests - Gilded Rose', function () {
     // General tests
     it('Checking if the selling day of a product except Sulfurus modifies', function() {
         const gildedRose = new GildedRose([ new Item('Potato', 13, 12) ]);
