@@ -56,7 +56,6 @@ describe('Golden Master Test', function () {
                                         new Item('Aged Brie', -1, 2)                          
         ];
 
-
         // First update
         let items = gildedRose.updateQuality();
         expect(items).to.deep.equal(gildedRoseExpected);
