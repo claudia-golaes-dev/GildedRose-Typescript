@@ -10,9 +10,7 @@ describe('Golden Master Test', function () {
         const gildedRose = new GildedRose([ new Item('Sulfuras, Hand of Ragnaros', 0, 80),
                                             new Item('Sulfuras, Hand of Ragnaros', 4, 22),
                                             new Item('Sulfuras, Hand of Ragnaros', 4, 80),
-                                            // new Item('Aged Brie', 4, 80),
-                                            // new Item('Aged Brie', 21, 12),
-                                            // new Item('Aged Brie', 5, 13),                       
+                       
         ] );
         // First update for Sulfuras (all values should remain the same)
         let items = gildedRose.updateQuality();
