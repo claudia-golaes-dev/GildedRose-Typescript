@@ -15,6 +15,12 @@ describe('Gilded Rose', function () {
         expect(items[0].quality).to.equal(10);
     });
 
+    it('Checking if the quality decreases once a day passes, except Sulfurus, Aged Brie and Backstage Passes', function() {
+        const gildedRose = new GildedRose([ new Item('Potato', 5, 12) ]);
+        const items = gildedRose.updateQuality();
+        expect(items[0].quality).to.equal(11);
+    });
+
     /** 
     it('Checking if the added object exists in the inventory', function() {
         const namesList = ['Sulfuras, Hand of Ragnaros', 'Aged Brie', 'Backstage passes to a TAFKAL80ETC concert']
