@@ -35,15 +35,13 @@ export class GildedRose {
     }
 
     updateQuality() {
-        const namesList = ['Aged Brie', 'Backstage passes to a TAFKAL80ETC concert'];
-
-        // Added another condition in the for loop: to ignore Sulfuras, because its value does not modify
+        // Added another condition in the for loop: to ignore Sulfuras, because its value doesn't modify
         for (let i = 0; i < this.items.length && this.items[i].name != 'Sulfuras, Hand of Ragnaros'; i++) {
             const checkIfAgedBrie = this.items[i].name == 'Aged Brie';
             const checkIfBackstagePasess = this.items[i].name == 'Backstage passes to a TAFKAL80ETC concert';
             const sellDate = this.items[i].sellIn;
 
-            // Checking quality for a normal product
+            // Increasing/decreasing quality according to the number of days untill selling day
             if(!checkIfAgedBrie && !checkIfBackstagePasess) {
                 if (sellDate > 0) {
                     this.decreaseQuality(i);
