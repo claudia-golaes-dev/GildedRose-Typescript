@@ -39,14 +39,15 @@ export class GildedRose {
         for (let i = 0; i < this.items.length && this.items[i].name != 'Sulfuras, Hand of Ragnaros'; i++) {
             const checkIfAgedBrie = this.items[i].name == 'Aged Brie';
             const checkIfBackstagePasess = this.items[i].name == 'Backstage passes to a TAFKAL80ETC concert';
+            const checkIfConjuredManaCake = this.items[i].name == 'Conjured Mana Cake'
             const sellDate = this.items[i].sellIn;
 
             // Increasing/decreasing quality according to the number of days untill selling day
             if(!checkIfAgedBrie && !checkIfBackstagePasess) {
                 if (sellDate > 0) {
-                    this.decreaseQuality(i);
+                    this.decreaseQuality(i, 1 + Number(checkIfConjuredManaCake));
                 } else {
-                    this.decreaseQuality(i, 2);
+                    this.decreaseQuality(i, 2 +  2 * Number(checkIfConjuredManaCake));
                 }
                 this.decreaseSellIn(i);
             } else if (checkIfAgedBrie) {
