@@ -3,9 +3,7 @@ import { expect } from 'chai';
 
 
 // Add a master test here
-
 describe('Golden Master Test', function () {
-
     it('Sulfuras, Hand of Ragnaros testing', function() {
         const gildedRose = new GildedRose([ new Item('Sulfuras, Hand of Ragnaros', 0, 80),
                                             new Item('Sulfuras, Hand of Ragnaros', 4, 22),
@@ -44,7 +42,6 @@ describe('Golden Master Test', function () {
                                         new Item('Aged Brie', 0, 0),                           
         ] );
 
-
         // Values after first update
         let gildedRoseExpected :Item []= [new Item('Aged Brie', 3, 80),
                                         new Item('Aged Brie', 20, 13),
@@ -53,7 +50,6 @@ describe('Golden Master Test', function () {
                                         new Item('Aged Brie', -16, -41),
                                         new Item('Aged Brie', -1, 2)                          
         ];
-
 
         // First update
         let items = gildedRose.updateQuality();
@@ -69,7 +65,6 @@ describe('Golden Master Test', function () {
         ];
         items = gildedRose.updateQuality();
         expect(items).to.deep.equal(gildedRoseExpected);
-
     })
 
     it('Backstage passes to a TAFKAL80ETC concert', function(){
@@ -106,7 +101,5 @@ describe('Golden Master Test', function () {
         // Second update
         items = gildedRose.updateQuality();
         expect(items).to.deep.equal(gildedRoseExpected);
-
     })
-
 });
