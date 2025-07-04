@@ -21,6 +21,20 @@ describe('Unit Tests - Gilded Rose', function () {
         expect(items[0].quality).to.equal(11);
     });
 
+    // Conjured Mana Cake tests
+    it('Checking if the quality decreases twice once a day passes for Conjured Mana Cake', function() {
+        const gildedRose = new GildedRose([ new Item('Conjured Mana Cake', 5, 12) ]);
+        const items = gildedRose.updateQuality();
+        expect(items[0].quality).to.equal(10);
+    });
+
+    it('Checking once the sell by date has passed, quality degrades twice as fast for Conjured Mana Cake', function() {
+        const gildedRose = new GildedRose([ new Item('Conjured Mana Cake', -2, 12) ]);
+        const items = gildedRose.updateQuality();
+        expect(items[0].quality).to.equal(8);
+    });
+
+
     // Sulfurus tests
     it('Checking if the quality of Sulfurus does not modify', function() {
         const gildedRose = new GildedRose([ new Item('Sulfuras, Hand of Ragnaros', 0, 80) ]);
