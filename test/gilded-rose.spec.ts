@@ -44,6 +44,13 @@ describe('Gilded Rose', function () {
     });
 
     //Aged Brie tests
+    it('Checking if the quality of Aged Brie increases once a day passes', function() {
+        const gildedRose = new GildedRose([ new Item('Aged Brie', 5, 12) ]);
+        const items = gildedRose.updateQuality();
+        expect(items[0].quality).to.equal(13);
+    });
+
+    
     
 
 });
