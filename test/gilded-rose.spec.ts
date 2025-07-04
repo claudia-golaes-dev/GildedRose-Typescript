@@ -21,15 +21,6 @@ describe('Unit Tests - Gilded Rose', function () {
         expect(items[0].quality).to.equal(11);
     });
 
-    /** 
-    it('Checking if the added object exists in the inventory', function() {
-        const namesList = ['Sulfuras, Hand of Ragnaros', 'Aged Brie', 'Backstage passes to a TAFKAL80ETC concert']
-        const gildedRose = new GildedRose([ new Item('Aged Brie', 0, 50) ]);
-        const items = gildedRose.updateQuality();
-        expect(namesList).to.include(items[0].name) ;
-    });
-    */ 
-
     // Sulfurus tests
     it('Checking if the quality of Sulfurus does not modify', function() {
         const gildedRose = new GildedRose([ new Item('Sulfuras, Hand of Ragnaros', 0, 80) ]);
